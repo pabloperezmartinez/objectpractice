@@ -12,16 +12,12 @@ public class Main {
             "0000001", 
             "Pablo",
             "Pérez Martínez",
-            new Date(1986, 1, 8
-            ));
-        student.printStudent();
-        System.out.println("\n");
-        Payment payment = new Payment(
-            1,
-            student,
-            (float)423.23,
-            new Date()
-        );
-        payment.printPayment();
+            new Date(1986, 1, 8),
+            "paperez@puce.edu.ec",
+            "+593 98 330 9406",
+            2
+            );
+        
+        student.print();
     }
 }
