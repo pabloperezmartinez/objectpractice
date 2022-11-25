@@ -1,6 +1,7 @@
 package JavaOPP.scoolmanagement;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Period;
 
 /**
  * @author Pablo Pérez Martínez
@@ -9,7 +10,7 @@ public class Person {
     private String id;
     private String firstName;
     private String lastName;
-    private Date birthday;
+    private LocalDate birthday;
     private String email;
     private String phoneNumber;
 
@@ -22,7 +23,7 @@ public class Person {
      * @param email
      * @param phoneNumber
      */
-    public Person(String id, String firstName, String lastName, Date birthday, String email, String phoneNumber) {
+    public Person(String id, String firstName, String lastName, LocalDate birthday, String email, String phoneNumber) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -83,7 +84,7 @@ public class Person {
      * Gets birthday
      * @return
      */
-    public Date getBirthday() {
+    public LocalDate getBirthday() {
         return birthday;
     }
 
@@ -91,7 +92,7 @@ public class Person {
      * Sets birthday
      * @param birthday
      */
-    public void setBirthday(Date birthday) {
+    public void setBirthday(LocalDate birthday) {
         this.birthday = birthday;
     }
 
@@ -132,8 +133,8 @@ public class Person {
      * @return
      */
     public int getAge() {
-        long diff = (new Date()).getTime() - this.birthday.getTime();
-        return (int) Math.floor(diff / ((1000*60*60*24) % 365));
+        LocalDate now = LocalDate.now();
+        return Period.between(this.birthday, now).getYears();
     }
 
     /**

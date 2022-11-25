@@ -1,5 +1,6 @@
 package JavaOPP.scoolmanagement;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Student extends Person {
@@ -15,7 +16,7 @@ public class Student extends Person {
      * @param phoneNumber
      * @param level
      */
-    public Student(String id, String firstName, String lastName, Date birthday, String email, String phoneNumber,
+    public Student(String id, String firstName, String lastName, LocalDate birthday, String email, String phoneNumber,
             int level) {
         super(id, firstName, lastName, birthday, email, phoneNumber);
         this.level = level;
@@ -45,5 +46,11 @@ public class Student extends Person {
         // TODO Auto-generated method stub
         super.print();
         System.out.println("Level: " + this.level);
+    }
+
+    @Override
+    public String getFullName() {
+        // TODO Auto-generated method stub
+        return super.getFullName();
     }
 }
